@@ -1,5 +1,5 @@
-import "dotenv/config";
 import "reflect-metadata";
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import swaggerJsdoc from "swagger-jsdoc";
@@ -59,12 +59,13 @@ async function start() {
   } else {
     try {
       await AppDataSource.initialize();
-      console.log("Database connected");
+      console.log("Database connected successfully");
+      console.log("Registered entities:", AppDataSource.entityMetadatas.map(e => e.name).join(", "));
     } catch (err: any) {
-      console.warn(
-        "Database connection failed — running without DB:",
-        err.message
-      );
+      console.error("Database connection FAILED:", err.message);
+      if (err.code) console.error("Error code:", err.code);
+      console.error("Full error:", JSON.stringify(err, Object.getOwnPropertyNames(err), 2));
+      process.exit(1);
     }
   }
 
