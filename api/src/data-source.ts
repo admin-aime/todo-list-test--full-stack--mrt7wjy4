@@ -11,13 +11,11 @@ export const AppDataSource = new DataSource({
   type: "mysql",
   url: process.env.DATABASE_URL,
   synchronize: true,
-  logging: ["error", "warn"],
+  logging: ["error", "warn", "migration"],
   entities: [User, Task],
   migrations: [],
   subscribers: [],
-  extra: {
-    ssl: {
-      rejectUnauthorized: false,
-    },
+  ssl: {
+    rejectUnauthorized: false,
   },
 });

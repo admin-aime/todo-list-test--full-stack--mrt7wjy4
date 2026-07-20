@@ -54,18 +54,30 @@ app.use("/api/db-status", dbStatusRoutes);
 async function start() {
   const previewNoDb = (process.env.AIME_PREVIEW_NO_DB || "").trim().toLowerCase() === "true";
 
+  console.log("[start] AIME_PREVIEW_NO_DB =", process.env.AIME_PREVIEW_NO_DB || "NOT SET");
+  console.log("[start] DATABASE_URL set:", !!process.env.DATABASE_URL);
+  console.log("[start] NODE_ENV:", process.env.NODE_ENV || "NOT SET");
+
   if (previewNoDb) {
-    console.log("AIME_PREVIEW_NO_DB=true — skipping database connection");
+    console.log("[start] Skipping database connection (preview mode)");
   } else {
     try {
+      console.log("[start] Initializing DataSource...");
       await AppDataSource.initialize();
-      console.log("Database connected successfully");
-      console.log("Registered entities:", AppDataSource.entityMetadatas.map(e => e.name).join(", "));
+      console.log("[start] Database connected successfully");
+      console.log("[start] Registered entities:", AppDataSource.entityMetadatas.map(e => e.name).join(", "));
     } catch (err: any) {
-      console.error("Database connection FAILED:", err.message);
-      if (err.code) console.error("Error code:", err.code);
-      console.error("Full error:", JSON.stringify(err, Object.getOwnPropertyNames(err), 2));
-      process.exit(1);
+      console.error("[start] Database connection FAILED");
+      console.error("[start] Message:", err.message);
+      console.error("[start] Stack:", err.stack?.split("\n").slice(0, 5).join("\n"));
+      if (err.code) console.error("[start] Code:", err.code);
+      if (err.errno) console.error("[start] Errno:", err.errno);
+      if (err.sqlState) console.error("[start] SQL State:", err.sqlState);
+      if (err.sqlMessage) console.error("[start] SQL Message:", err.sqlMessage);
+      // Force exit so the container restarts and logs are visible
+      console.error("[start] Exiting process...");
+      setTimeout(() => process.exit(1), 500);
+      return;
     }
   }
 
