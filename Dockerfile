@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 FROM public.ecr.aws/docker/library/node:22-alpine AS base
-RUN apk add --no-cache curl
+RUN apk add --no-cache curl ca-certificates
 WORKDIR /app
 
 FROM base AS deps
