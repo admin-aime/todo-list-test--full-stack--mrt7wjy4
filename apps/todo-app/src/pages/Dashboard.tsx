@@ -7,19 +7,27 @@ import {
   Calendar,
   ListTodo,
   TrendingUp,
+  Database,
+  Wifi,
+  WifiOff,
 } from 'lucide-react';
-import { fetchTasks } from '../api';
-import type { Task } from '../types';
+import { fetchTasks, fetchDbStatus } from '../api';
+import type { Task, DbStatus } from '../types';
 
 export default function Dashboard() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [loading, setLoading] = useState(true);
+  const [dbStatus, setDbStatus] = useState<DbStatus | null>(null);
 
   useEffect(() => {
     fetchTasks()
       .then(setTasks)
       .catch(() => setTasks([]))
       .finally(() => setLoading(false));
+
+    fetchDbStatus()
+      .then(setDbStatus)
+      .catch(() => setDbStatus(null));
   }, []);
 
   const total = tasks.length;
@@ -136,6 +144,45 @@ export default function Dashboard() {
           <p className="text-3xl font-bold text-gray-900 dark:text-white">{highPriority}</p>
           <p className="text-xs text-gray-500 dark:text-gray-400">pending high-priority tasks</p>
         </div>
+      </div>
+
+      {/* DB Status */}
+      <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <Database size={18} className="text-purple-600 dark:text-purple-400" />
+          <h2 className="text-sm font-semibold text-gray-900 dark:text-white">Database Status</h2>
+        </div>
+        {dbStatus ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="flex items-center gap-2">
+              {dbStatus.connected ? (
+                <Wifi size={18} className="text-green-500 flex-shrink-0" />
+              ) : (
+                <WifiOff size={18} className="text-red-500 flex-shrink-0" />
+              )}
+              <div>
+                <p className="text-xs text-gray-500 dark:text-gray-400">Status</p>
+                <p className={`text-sm font-semibold ${dbStatus.connected ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+                  {dbStatus.connected ? 'Connected' : dbStatus.previewNoDb ? 'Skipped (preview)' : 'Disconnected'}
+                </p>
+              </div>
+            </div>
+            <div>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Type</p>
+              <p className="text-sm font-semibold text-gray-900 dark:text-white capitalize">{dbStatus.type}</p>
+            </div>
+            <div>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Database</p>
+              <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">{dbStatus.database}</p>
+            </div>
+            <div>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Host</p>
+              <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">{dbStatus.host}</p>
+            </div>
+          </div>
+        ) : (
+          <p className="text-sm text-gray-500 dark:text-gray-400">Unable to fetch database status.</p>
+        )}
       </div>
 
       {/* Upcoming */}

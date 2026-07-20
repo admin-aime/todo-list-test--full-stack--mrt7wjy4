@@ -1,4 +1,4 @@
-import type { Task, User } from './types';
+import type { Task, User, DbStatus } from './types';
 
 const USE_LOCAL = import.meta.env.VITE_USE_LOCAL_STORE === 'true';
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? '';
@@ -291,6 +291,25 @@ export async function deleteTask(id: string): Promise<void> {
     headers: getAuthHeaders(),
   });
   if (!res.ok) throw new Error('Failed to delete task');
+}
+
+// ---- DB Status (always hits the real backend — diagnostic endpoint) ----
+
+export async function fetchDbStatus(): Promise<DbStatus> {
+  try {
+    const res = await fetch(`${API_BASE}/api/db-status`);
+    if (!res.ok) throw new Error('Failed to fetch DB status');
+    return res.json();
+  } catch {
+    // Backend unreachable — fall back to localStorage info
+    return {
+      connected: false,
+      database: 'localStorage',
+      host: 'browser',
+      type: 'local',
+      previewNoDb: false,
+    };
+  }
 }
 
 export async function toggleTaskComplete(id: string): Promise<Task> {

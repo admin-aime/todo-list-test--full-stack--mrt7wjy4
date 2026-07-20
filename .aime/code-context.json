@@ -42,20 +42,21 @@
       "imports": []
     },
     "api/.env": {
-      "lines": 7,
-      "lastModified": "2026-07-20T12:49:37.314Z",
+      "lines": 5,
+      "lastModified": "2026-07-20T16:58:56.891Z",
       "summary": ".env",
       "exports": [],
       "imports": []
     },
     "api/src/data-source.ts": {
-      "lines": 19,
-      "lastModified": "2026-07-20T12:49:40.618Z",
+      "lines": 24,
+      "lastModified": "2026-07-20T17:07:53.752Z",
       "summary": "Exports: AppDataSource",
       "exports": [
         "AppDataSource"
       ],
       "imports": [
+        "dotenv/config",
         "reflect-metadata",
         "typeorm",
         "./entities/User",
@@ -128,13 +129,14 @@
       ]
     },
     "api/src/index.ts": {
-      "lines": 80,
-      "lastModified": "2026-07-20T12:50:21.112Z",
+      "lines": 89,
+      "lastModified": "2026-07-20T17:10:20.299Z",
       "summary": "Exports: default:app",
       "exports": [
         "default:app"
       ],
       "imports": [
+        "dotenv/config",
         "reflect-metadata",
         "express",
         "cors",
@@ -142,7 +144,8 @@
         "swagger-ui-express",
         "./data-source",
         "./routes/auth",
-        "./routes/tasks"
+        "./routes/tasks",
+        "./routes/db-status"
       ]
     },
     "apps/todo-app/package.json": {
@@ -211,19 +214,20 @@
       "imports": []
     },
     "apps/todo-app/src/types.ts": {
-      "lines": 27,
-      "lastModified": "2026-07-20T12:50:38.089Z",
+      "lines": 35,
+      "lastModified": "2026-07-20T17:10:24.316Z",
       "summary": "Type definitions",
       "exports": [
         "User",
         "Task",
-        "TaskFilters"
+        "TaskFilters",
+        "DbStatus"
       ],
       "imports": []
     },
     "apps/todo-app/src/api.ts": {
-      "lines": 314,
-      "lastModified": "2026-07-20T12:57:55.372Z",
+      "lines": 333,
+      "lastModified": "2026-07-20T17:14:48.086Z",
       "summary": "Exports: AuthResponse, logoutUser",
       "exports": [
         "AuthResponse",
@@ -335,8 +339,8 @@
       ]
     },
     "apps/todo-app/src/pages/Dashboard.tsx": {
-      "lines": 177,
-      "lastModified": "2026-07-20T12:52:08.650Z",
+      "lines": 224,
+      "lastModified": "2026-07-20T17:10:46.823Z",
       "summary": "Dashboard component",
       "exports": [
         "default:Dashboard"
@@ -439,68 +443,80 @@
       "summary": "vite-env.d.ts",
       "exports": [],
       "imports": []
+    },
+    "api/src/routes/db-status.ts": {
+      "lines": 105,
+      "lastModified": "2026-07-20T17:16:31.938Z",
+      "summary": "Exports: default:router",
+      "exports": [
+        "default:router"
+      ],
+      "imports": [
+        "express",
+        "net"
+      ]
     }
   },
   "dependencies": {},
   "recentChanges": [
     {
-      "timestamp": "2026-07-20T12:57:55.366Z",
+      "timestamp": "2026-07-20T17:16:31.926Z",
+      "file": "api/src/routes/db-status.ts",
+      "change": "modifyd api/src/routes/db-status.ts",
+      "type": "modify"
+    },
+    {
+      "timestamp": "2026-07-20T17:15:54.812Z",
+      "file": "api/src/routes/db-status.ts",
+      "change": "modifyd api/src/routes/db-status.ts",
+      "type": "modify"
+    },
+    {
+      "timestamp": "2026-07-20T17:15:00.177Z",
+      "file": "api/src/routes/db-status.ts",
+      "change": "modifyd api/src/routes/db-status.ts",
+      "type": "modify"
+    },
+    {
+      "timestamp": "2026-07-20T17:14:48.065Z",
       "file": "apps/todo-app/src/api.ts",
       "change": "modifyd apps/todo-app/src/api.ts",
       "type": "modify"
     },
     {
-      "timestamp": "2026-07-20T12:57:43.689Z",
-      "file": "apps/todo-app/src/vite-env.d.ts",
-      "change": "modifyd apps/todo-app/src/vite-env.d.ts",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T12:53:28.853Z",
-      "file": "apps/todo-app/.env",
-      "change": "modifyd apps/todo-app/.env",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T12:53:28.309Z",
-      "file": "apps/todo-app/public/seed.json",
-      "change": "modifyd apps/todo-app/public/seed.json",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T12:53:16.294Z",
-      "file": "apps/todo-app/src/main.tsx",
-      "change": "modifyd apps/todo-app/src/main.tsx",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T12:53:15.451Z",
-      "file": "apps/todo-app/src/App.tsx",
-      "change": "modifyd apps/todo-app/src/App.tsx",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T12:53:07.033Z",
-      "file": "apps/todo-app/src/pages/ModelOverview.tsx",
-      "change": "modifyd apps/todo-app/src/pages/ModelOverview.tsx",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T12:52:55.077Z",
-      "file": "apps/todo-app/src/pages/Tasks.tsx",
-      "change": "modifyd apps/todo-app/src/pages/Tasks.tsx",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T12:52:21.706Z",
-      "file": "apps/todo-app/src/pages/TaskForm.tsx",
-      "change": "modifyd apps/todo-app/src/pages/TaskForm.tsx",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T12:52:08.646Z",
+      "timestamp": "2026-07-20T17:10:46.817Z",
       "file": "apps/todo-app/src/pages/Dashboard.tsx",
       "change": "modifyd apps/todo-app/src/pages/Dashboard.tsx",
+      "type": "modify"
+    },
+    {
+      "timestamp": "2026-07-20T17:10:38.325Z",
+      "file": "apps/todo-app/src/pages/Dashboard.tsx",
+      "change": "modifyd apps/todo-app/src/pages/Dashboard.tsx",
+      "type": "modify"
+    },
+    {
+      "timestamp": "2026-07-20T17:10:34.507Z",
+      "file": "apps/todo-app/src/pages/Dashboard.tsx",
+      "change": "modifyd apps/todo-app/src/pages/Dashboard.tsx",
+      "type": "modify"
+    },
+    {
+      "timestamp": "2026-07-20T17:10:30.601Z",
+      "file": "apps/todo-app/src/api.ts",
+      "change": "modifyd apps/todo-app/src/api.ts",
+      "type": "modify"
+    },
+    {
+      "timestamp": "2026-07-20T17:10:26.807Z",
+      "file": "apps/todo-app/src/api.ts",
+      "change": "modifyd apps/todo-app/src/api.ts",
+      "type": "modify"
+    },
+    {
+      "timestamp": "2026-07-20T17:10:24.313Z",
+      "file": "apps/todo-app/src/types.ts",
+      "change": "modifyd apps/todo-app/src/types.ts",
       "type": "modify"
     }
   ]

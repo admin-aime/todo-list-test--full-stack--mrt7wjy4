@@ -1,3 +1,4 @@
+import "dotenv/config";
 import "reflect-metadata";
 import express from "express";
 import cors from "cors";
@@ -6,6 +7,7 @@ import swaggerUi from "swagger-ui-express";
 import { AppDataSource } from "./data-source";
 import authRoutes from "./routes/auth";
 import taskRoutes from "./routes/tasks";
+import dbStatusRoutes from "./routes/db-status";
 
 const app = express();
 const PORT = parseInt(process.env.PORT || "4000", 10);
@@ -46,17 +48,24 @@ app.get("/api/health", (_req, res) => {
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
+app.use("/api/db-status", dbStatusRoutes);
 
 // Initialize DB and start
 async function start() {
-  try {
-    await AppDataSource.initialize();
-    console.log("Database connected");
-  } catch (err: any) {
-    console.warn(
-      "Database connection failed — running without DB:",
-      err.message
-    );
+  const previewNoDb = (process.env.AIME_PREVIEW_NO_DB || "").trim().toLowerCase() === "true";
+
+  if (previewNoDb) {
+    console.log("AIME_PREVIEW_NO_DB=true — skipping database connection");
+  } else {
+    try {
+      await AppDataSource.initialize();
+      console.log("Database connected");
+    } catch (err: any) {
+      console.warn(
+        "Database connection failed — running without DB:",
+        err.message
+      );
+    }
   }
 
   const hostBindingEnabled =

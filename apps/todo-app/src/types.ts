@@ -24,3 +24,11 @@ export type TaskFilters = {
   search: string;
   sortBy: 'createdAt' | 'dueDate' | 'priority';
 };
+
+export interface DbStatus {
+  connected: boolean;
+  database: string;
+  host: string;
+  type: string;
+  previewNoDb: boolean;
+}
