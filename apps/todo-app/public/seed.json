@@ -1,0 +1,100 @@
+{
+  "tasks": [
+    {
+      "id": "seed-1",
+      "userId": "seed-user",
+      "title": "Review project proposal",
+      "description": "Go through the Q3 project proposal and provide feedback to the team before the meeting.",
+      "priority": "high",
+      "category": "work",
+      "dueDate": "2025-01-15T17:00:00.000Z",
+      "completed": false,
+      "createdAt": "2025-01-05T08:00:00.000Z",
+      "updatedAt": "2025-01-05T08:00:00.000Z"
+    },
+    {
+      "id": "seed-2",
+      "userId": "seed-user",
+      "title": "Buy groceries",
+      "description": "Milk, eggs, bread, chicken breast, broccoli, and rice.",
+      "priority": "medium",
+      "category": "shopping",
+      "dueDate": "2025-01-12T12:00:00.000Z",
+      "completed": false,
+      "createdAt": "2025-01-06T10:30:00.000Z",
+      "updatedAt": "2025-01-06T10:30:00.000Z"
+    },
+    {
+      "id": "seed-3",
+      "userId": "seed-user",
+      "title": "Morning workout",
+      "description": "30-minute jog followed by 15 minutes of stretching.",
+      "priority": "low",
+      "category": "health",
+      "dueDate": null,
+      "completed": true,
+      "createdAt": "2025-01-07T06:00:00.000Z",
+      "updatedAt": "2025-01-07T07:00:00.000Z"
+    },
+    {
+      "id": "seed-4",
+      "userId": "seed-user",
+      "title": "Pay electricity bill",
+      "description": "Due by end of the month. Reference number: EB-2025-0142.",
+      "priority": "high",
+      "category": "finance",
+      "dueDate": "2025-01-31T23:59:00.000Z",
+      "completed": false,
+      "createdAt": "2025-01-08T09:00:00.000Z",
+      "updatedAt": "2025-01-08T09:00:00.000Z"
+    },
+    {
+      "id": "seed-5",
+      "userId": "seed-user",
+      "title": "Read 'Atomic Habits'",
+      "description": "Finish chapter 6-8 and take notes on habit stacking.",
+      "priority": "low",
+      "category": "personal",
+      "dueDate": null,
+      "completed": false,
+      "createdAt": "2025-01-09T14:00:00.000Z",
+      "updatedAt": "2025-01-09T14:00:00.000Z"
+    },
+    {
+      "id": "seed-6",
+      "userId": "seed-user",
+      "title": "Prepare presentation slides",
+      "description": "Create slides for the Monday client pitch. Include Q4 metrics and roadmap.",
+      "priority": "high",
+      "category": "work",
+      "dueDate": "2025-01-13T09:00:00.000Z",
+      "completed": false,
+      "createdAt": "2025-01-10T11:00:00.000Z",
+      "updatedAt": "2025-01-10T11:00:00.000Z"
+    },
+    {
+      "id": "seed-7",
+      "userId": "seed-user",
+      "title": "Update resume",
+      "description": "Add recent projects and update skills section.",
+      "priority": "medium",
+      "category": "personal",
+      "dueDate": "2025-01-20T18:00:00.000Z",
+      "completed": false,
+      "createdAt": "2025-01-10T15:00:00.000Z",
+      "updatedAt": "2025-01-10T15:00:00.000Z"
+    },
+    {
+      "id": "seed-8",
+      "userId": "seed-user",
+      "title": "Dentist appointment",
+      "description": "Regular checkup at 2 PM. Dr. Chen, City Dental Clinic.",
+      "priority": "medium",
+      "category": "health",
+      "dueDate": "2025-01-08T14:00:00.000Z",
+      "completed": true,
+      "createdAt": "2025-01-02T08:00:00.000Z",
+      "updatedAt": "2025-01-08T15:00:00.000Z"
+    }
+  ]
+}
