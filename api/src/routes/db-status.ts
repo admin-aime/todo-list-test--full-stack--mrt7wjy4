@@ -58,8 +58,8 @@ router.get("/", async (_req: Request, res: Response) => {
     }
   }
 
-  // Use a raw TCP socket to test reachability — avoids the pg module's SSL
-  // handshake which crashes inside WebContainer (detached ArrayBuffer).
+  // Use a raw TCP socket to test reachability — avoids driver-specific
+  // SSL handshake issues inside WebContainer.
   let connected = false;
   let error = "";
 
@@ -96,7 +96,7 @@ router.get("/", async (_req: Request, res: Response) => {
     connected,
     database,
     host,
-    type: dbType || "postgres",
+    type: dbType || "mysql",
     error: error || undefined,
   });
 });

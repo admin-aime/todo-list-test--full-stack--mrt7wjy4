@@ -29,16 +29,16 @@ export class Task {
   @Column({ default: "general" })
   category: string;
 
-  @Column({ type: "timestamptz", nullable: true })
+  @Column({ type: "datetime", nullable: true })
   dueDate: Date | null;
 
   @Column({ default: false })
   completed: boolean;
 
-  @CreateDateColumn({ type: "timestamptz" })
+  @CreateDateColumn({ type: "datetime" })
   createdAt: Date;
 
-  @UpdateDateColumn({ type: "timestamptz" })
+  @UpdateDateColumn({ type: "datetime" })
   updatedAt: Date;
 
   @ManyToOne(() => User, (user) => user.tasks, { onDelete: "CASCADE" })

@@ -36,21 +36,21 @@
     },
     "api/.env.example": {
       "lines": 4,
-      "lastModified": "2026-07-20T12:49:36.221Z",
+      "lastModified": "2026-07-20T17:53:43.797Z",
       "summary": ".env.example",
       "exports": [],
       "imports": []
     },
     "api/.env": {
       "lines": 5,
-      "lastModified": "2026-07-20T16:58:56.891Z",
+      "lastModified": "2026-07-20T17:53:21.668Z",
       "summary": ".env",
       "exports": [],
       "imports": []
     },
     "api/src/data-source.ts": {
-      "lines": 24,
-      "lastModified": "2026-07-20T17:07:53.752Z",
+      "lines": 22,
+      "lastModified": "2026-07-20T17:53:11.875Z",
       "summary": "Exports: AppDataSource",
       "exports": [
         "AppDataSource"
@@ -76,7 +76,7 @@
     },
     "api/src/entities/Task.ts": {
       "lines": 48,
-      "lastModified": "2026-07-20T12:49:44.900Z",
+      "lastModified": "2026-07-20T17:53:17.356Z",
       "summary": "Exports: Task",
       "exports": [
         "Task"
@@ -446,7 +446,7 @@
     },
     "api/src/routes/db-status.ts": {
       "lines": 105,
-      "lastModified": "2026-07-20T17:16:31.938Z",
+      "lastModified": "2026-07-20T17:53:36.883Z",
       "summary": "Exports: default:router",
       "exports": [
         "default:router"
@@ -459,6 +459,42 @@
   },
   "dependencies": {},
   "recentChanges": [
+    {
+      "timestamp": "2026-07-20T17:53:43.777Z",
+      "file": "api/.env.example",
+      "change": "modifyd api/.env.example",
+      "type": "modify"
+    },
+    {
+      "timestamp": "2026-07-20T17:53:36.876Z",
+      "file": "api/src/routes/db-status.ts",
+      "change": "modifyd api/src/routes/db-status.ts",
+      "type": "modify"
+    },
+    {
+      "timestamp": "2026-07-20T17:53:33.539Z",
+      "file": "api/src/routes/db-status.ts",
+      "change": "modifyd api/src/routes/db-status.ts",
+      "type": "modify"
+    },
+    {
+      "timestamp": "2026-07-20T17:53:21.664Z",
+      "file": "api/.env",
+      "change": "modifyd api/.env",
+      "type": "modify"
+    },
+    {
+      "timestamp": "2026-07-20T17:53:17.350Z",
+      "file": "api/src/entities/Task.ts",
+      "change": "modifyd api/src/entities/Task.ts",
+      "type": "modify"
+    },
+    {
+      "timestamp": "2026-07-20T17:53:11.869Z",
+      "file": "api/src/data-source.ts",
+      "change": "modifyd api/src/data-source.ts",
+      "type": "modify"
+    },
     {
       "timestamp": "2026-07-20T17:16:31.926Z",
       "file": "api/src/routes/db-status.ts",
@@ -481,42 +517,6 @@
       "timestamp": "2026-07-20T17:14:48.065Z",
       "file": "apps/todo-app/src/api.ts",
       "change": "modifyd apps/todo-app/src/api.ts",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T17:10:46.817Z",
-      "file": "apps/todo-app/src/pages/Dashboard.tsx",
-      "change": "modifyd apps/todo-app/src/pages/Dashboard.tsx",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T17:10:38.325Z",
-      "file": "apps/todo-app/src/pages/Dashboard.tsx",
-      "change": "modifyd apps/todo-app/src/pages/Dashboard.tsx",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T17:10:34.507Z",
-      "file": "apps/todo-app/src/pages/Dashboard.tsx",
-      "change": "modifyd apps/todo-app/src/pages/Dashboard.tsx",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T17:10:30.601Z",
-      "file": "apps/todo-app/src/api.ts",
-      "change": "modifyd apps/todo-app/src/api.ts",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T17:10:26.807Z",
-      "file": "apps/todo-app/src/api.ts",
-      "change": "modifyd apps/todo-app/src/api.ts",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T17:10:24.313Z",
-      "file": "apps/todo-app/src/types.ts",
-      "change": "modifyd apps/todo-app/src/types.ts",
       "type": "modify"
     }
   ]
