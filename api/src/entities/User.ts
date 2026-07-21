@@ -7,7 +7,7 @@ import {
 } from "typeorm";
 import { Task } from "./Task";
 
-@Entity("users")
+@Entity("app_users")
 export class User {
   @PrimaryGeneratedColumn("uuid")
   id: string;

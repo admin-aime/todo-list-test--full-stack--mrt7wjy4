@@ -3,69 +3,26 @@
   "project": {
     "name": "app",
     "stack": [],
-    "createdAt": "2026-07-20T12:46:08.163Z"
+    "createdAt": "2026-07-21T16:25:56.752Z"
   },
   "files": {
-    "package.json": {
-      "lines": 21,
-      "lastModified": "2026-07-20T12:49:23.874Z",
-      "summary": "Package configuration",
-      "exports": [],
-      "imports": []
-    },
-    "Dockerfile": {
-      "lines": 22,
-      "lastModified": "2026-07-20T12:49:27.613Z",
-      "summary": "Dockerfile",
-      "exports": [],
-      "imports": []
-    },
-    "api/package.json": {
-      "lines": 35,
-      "lastModified": "2026-07-20T12:49:33.317Z",
-      "summary": "Package configuration",
-      "exports": [],
-      "imports": []
-    },
-    "api/tsconfig.json": {
-      "lines": 26,
-      "lastModified": "2026-07-20T12:49:35.426Z",
-      "summary": "TypeScript configuration",
-      "exports": [],
-      "imports": []
-    },
-    "api/.env.example": {
-      "lines": 4,
-      "lastModified": "2026-07-20T17:53:43.797Z",
-      "summary": ".env.example",
-      "exports": [],
-      "imports": []
-    },
     "api/.env": {
-      "lines": 5,
-      "lastModified": "2026-07-20T17:53:21.668Z",
+      "lines": 6,
+      "lastModified": "2026-07-21T16:39:07.353Z",
       "summary": ".env",
       "exports": [],
       "imports": []
     },
-    "api/src/data-source.ts": {
-      "lines": 22,
-      "lastModified": "2026-07-20T17:53:11.875Z",
-      "summary": "Exports: AppDataSource",
-      "exports": [
-        "AppDataSource"
-      ],
-      "imports": [
-        "dotenv/config",
-        "reflect-metadata",
-        "typeorm",
-        "./entities/User",
-        "./entities/Task"
-      ]
+    "apps/todo-app/.env": {
+      "lines": 7,
+      "lastModified": "2026-07-21T16:39:10.311Z",
+      "summary": ".env",
+      "exports": [],
+      "imports": []
     },
     "api/src/entities/User.ts": {
       "lines": 30,
-      "lastModified": "2026-07-20T12:49:42.307Z",
+      "lastModified": "2026-07-21T16:52:08.274Z",
       "summary": "Exports: User",
       "exports": [
         "User"
@@ -76,7 +33,7 @@
     },
     "api/src/entities/Task.ts": {
       "lines": 48,
-      "lastModified": "2026-07-20T17:53:17.356Z",
+      "lastModified": "2026-07-21T16:52:08.884Z",
       "summary": "Exports: Task",
       "exports": [
         "Task"
@@ -84,439 +41,38 @@
       "imports": [
         "./User"
       ]
-    },
-    "api/src/middleware/auth.ts": {
-      "lines": 33,
-      "lastModified": "2026-07-20T12:49:47.166Z",
-      "summary": "Exports: AuthRequest, authMiddleware",
-      "exports": [
-        "AuthRequest",
-        "authMiddleware"
-      ],
-      "imports": [
-        "express",
-        "jsonwebtoken"
-      ]
-    },
-    "api/src/routes/auth.ts": {
-      "lines": 171,
-      "lastModified": "2026-07-20T12:49:59.078Z",
-      "summary": "Exports: default:router",
-      "exports": [
-        "default:router"
-      ],
-      "imports": [
-        "express",
-        "bcryptjs",
-        "jsonwebtoken",
-        "../data-source",
-        "../entities/User",
-        "../middleware/auth"
-      ]
-    },
-    "api/src/routes/tasks.ts": {
-      "lines": 275,
-      "lastModified": "2026-07-20T12:50:15.620Z",
-      "summary": "Exports: default:router",
-      "exports": [
-        "default:router"
-      ],
-      "imports": [
-        "express",
-        "../data-source",
-        "../entities/Task",
-        "../middleware/auth"
-      ]
-    },
-    "api/src/index.ts": {
-      "lines": 89,
-      "lastModified": "2026-07-20T17:10:20.299Z",
-      "summary": "Exports: default:app",
-      "exports": [
-        "default:app"
-      ],
-      "imports": [
-        "dotenv/config",
-        "reflect-metadata",
-        "express",
-        "cors",
-        "swagger-jsdoc",
-        "swagger-ui-express",
-        "./data-source",
-        "./routes/auth",
-        "./routes/tasks",
-        "./routes/db-status"
-      ]
-    },
-    "apps/todo-app/package.json": {
-      "lines": 29,
-      "lastModified": "2026-07-20T12:50:25.925Z",
-      "summary": "Package configuration",
-      "exports": [],
-      "imports": []
-    },
-    "apps/todo-app/vite.config.ts": {
-      "lines": 4,
-      "lastModified": "2026-07-20T12:50:26.654Z",
-      "summary": "Configuration file",
-      "exports": [
-        "default:defineConfig"
-      ],
-      "imports": [
-        "vite",
-        "@vitejs/plugin-react"
-      ]
-    },
-    "apps/todo-app/tsconfig.json": {
-      "lines": 24,
-      "lastModified": "2026-07-20T12:50:28.655Z",
-      "summary": "TypeScript configuration",
-      "exports": [],
-      "imports": []
-    },
-    "apps/todo-app/tsconfig.node.json": {
-      "lines": 12,
-      "lastModified": "2026-07-20T12:50:29.537Z",
-      "summary": "Configuration file",
-      "exports": [],
-      "imports": []
-    },
-    "apps/todo-app/tailwind.config.js": {
-      "lines": 8,
-      "lastModified": "2026-07-20T12:50:30.444Z",
-      "summary": "Configuration file",
-      "exports": [
-        "default"
-      ],
-      "imports": []
-    },
-    "apps/todo-app/postcss.config.js": {
-      "lines": 2,
-      "lastModified": "2026-07-20T12:50:31.011Z",
-      "summary": "Configuration file",
-      "exports": [
-        "default"
-      ],
-      "imports": []
-    },
-    "apps/todo-app/index.html": {
-      "lines": 13,
-      "lastModified": "2026-07-20T12:50:32.279Z",
-      "summary": "HTML entry point",
-      "exports": [],
-      "imports": []
-    },
-    "apps/todo-app/src/index.css": {
-      "lines": 4,
-      "lastModified": "2026-07-20T12:50:36.246Z",
-      "summary": "Stylesheet",
-      "exports": [],
-      "imports": []
-    },
-    "apps/todo-app/src/types.ts": {
-      "lines": 35,
-      "lastModified": "2026-07-20T17:10:24.316Z",
-      "summary": "Type definitions",
-      "exports": [
-        "User",
-        "Task",
-        "TaskFilters",
-        "DbStatus"
-      ],
-      "imports": []
-    },
-    "apps/todo-app/src/api.ts": {
-      "lines": 333,
-      "lastModified": "2026-07-20T17:14:48.086Z",
-      "summary": "Exports: AuthResponse, logoutUser",
-      "exports": [
-        "AuthResponse",
-        "logoutUser"
-      ],
-      "imports": [
-        "./types"
-      ]
-    },
-    "apps/todo-app/src/hooks/useTheme.ts": {
-      "lines": 22,
-      "lastModified": "2026-07-20T12:51:03.753Z",
-      "summary": "useTheme hook",
-      "exports": [
-        "useTheme"
-      ],
-      "imports": [
-        "react"
-      ]
-    },
-    "apps/todo-app/src/hooks/useAuth.ts": {
-      "lines": 72,
-      "lastModified": "2026-07-20T12:51:08.511Z",
-      "summary": "useAuth hook",
-      "exports": [
-        "AuthContext",
-        "useAuth",
-        "AuthProvider"
-      ],
-      "imports": [
-        "react",
-        "../types",
-        "../api"
-      ]
-    },
-    "apps/todo-app/src/components/ConfirmDialog.tsx": {
-      "lines": 45,
-      "lastModified": "2026-07-20T12:51:12.454Z",
-      "summary": "ConfirmDialog component",
-      "exports": [
-        "default:ConfirmDialog"
-      ],
-      "imports": [
-        "lucide-react"
-      ]
-    },
-    "apps/todo-app/src/components/FormModal.tsx": {
-      "lines": 30,
-      "lastModified": "2026-07-20T12:51:15.100Z",
-      "summary": "FormModal component",
-      "exports": [
-        "default:FormModal"
-      ],
-      "imports": [
-        "lucide-react"
-      ]
-    },
-    "apps/todo-app/src/components/EmptyState.tsx": {
-      "lines": 15,
-      "lastModified": "2026-07-20T12:51:16.367Z",
-      "summary": "EmptyState component",
-      "exports": [
-        "default:EmptyState"
-      ],
-      "imports": [
-        "lucide-react"
-      ]
-    },
-    "apps/todo-app/src/components/Layout.tsx": {
-      "lines": 137,
-      "lastModified": "2026-07-20T12:51:30.780Z",
-      "summary": "Layout component",
-      "exports": [
-        "default:Layout"
-      ],
-      "imports": [
-        "react",
-        "react-router-dom",
-        "../hooks/useAuth",
-        "../hooks/useTheme"
-      ]
-    },
-    "apps/todo-app/src/pages/Login.tsx": {
-      "lines": 95,
-      "lastModified": "2026-07-20T12:51:39.772Z",
-      "summary": "Login component",
-      "exports": [
-        "default:Login"
-      ],
-      "imports": [
-        "react",
-        "react-router-dom",
-        "../hooks/useAuth",
-        "lucide-react"
-      ]
-    },
-    "apps/todo-app/src/pages/Register.tsx": {
-      "lines": 129,
-      "lastModified": "2026-07-20T12:51:50.551Z",
-      "summary": "Register component",
-      "exports": [
-        "default:Register"
-      ],
-      "imports": [
-        "react",
-        "react-router-dom",
-        "../hooks/useAuth",
-        "lucide-react"
-      ]
-    },
-    "apps/todo-app/src/pages/Dashboard.tsx": {
-      "lines": 224,
-      "lastModified": "2026-07-20T17:10:46.823Z",
-      "summary": "Dashboard component",
-      "exports": [
-        "default:Dashboard"
-      ],
-      "imports": [
-        "react",
-        "react-router-dom",
-        "../api",
-        "../types"
-      ]
-    },
-    "apps/todo-app/src/pages/TaskForm.tsx": {
-      "lines": 151,
-      "lastModified": "2026-07-20T12:52:21.710Z",
-      "summary": "TaskForm component",
-      "exports": [
-        "default:TaskForm"
-      ],
-      "imports": [
-        "react",
-        "../types"
-      ]
-    },
-    "apps/todo-app/src/pages/Tasks.tsx": {
-      "lines": 407,
-      "lastModified": "2026-07-20T12:52:55.088Z",
-      "summary": "Tasks component",
-      "exports": [
-        "default:Tasks"
-      ],
-      "imports": [
-        "react",
-        "lucide-react",
-        "../api",
-        "../types",
-        "../components/FormModal",
-        "../components/ConfirmDialog",
-        "../components/EmptyState",
-        "./TaskForm"
-      ]
-    },
-    "apps/todo-app/src/pages/ModelOverview.tsx": {
-      "lines": 84,
-      "lastModified": "2026-07-20T12:53:07.037Z",
-      "summary": "ModelOverview component",
-      "exports": [
-        "default:ModelOverview"
-      ],
-      "imports": []
-    },
-    "apps/todo-app/src/App.tsx": {
-      "lines": 83,
-      "lastModified": "2026-07-20T12:53:15.456Z",
-      "summary": "App component",
-      "exports": [
-        "default:App"
-      ],
-      "imports": [
-        "react",
-        "react-router-dom",
-        "./hooks/useAuth",
-        "@aime-platform/aime-feedback-module",
-        "./components/Layout",
-        "./pages/Login",
-        "./pages/Register",
-        "./pages/Dashboard",
-        "./pages/Tasks",
-        "./pages/ModelOverview"
-      ]
-    },
-    "apps/todo-app/src/main.tsx": {
-      "lines": 6,
-      "lastModified": "2026-07-20T12:53:16.300Z",
-      "summary": "main component",
-      "exports": [],
-      "imports": [
-        "react",
-        "react-dom/client",
-        "./App",
-        "./index.css"
-      ]
-    },
-    "apps/todo-app/public/seed.json": {
-      "lines": 101,
-      "lastModified": "2026-07-20T12:53:28.313Z",
-      "summary": "seed.json",
-      "exports": [],
-      "imports": []
-    },
-    "apps/todo-app/.env": {
-      "lines": 2,
-      "lastModified": "2026-07-20T12:53:28.859Z",
-      "summary": ".env",
-      "exports": [],
-      "imports": []
-    },
-    "apps/todo-app/src/vite-env.d.ts": {
-      "lines": 2,
-      "lastModified": "2026-07-20T12:57:43.693Z",
-      "summary": "vite-env.d.ts",
-      "exports": [],
-      "imports": []
-    },
-    "api/src/routes/db-status.ts": {
-      "lines": 105,
-      "lastModified": "2026-07-20T17:53:36.883Z",
-      "summary": "Exports: default:router",
-      "exports": [
-        "default:router"
-      ],
-      "imports": [
-        "express",
-        "net"
-      ]
     }
   },
   "dependencies": {},
   "recentChanges": [
     {
-      "timestamp": "2026-07-20T17:53:43.777Z",
-      "file": "api/.env.example",
-      "change": "modifyd api/.env.example",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T17:53:36.876Z",
-      "file": "api/src/routes/db-status.ts",
-      "change": "modifyd api/src/routes/db-status.ts",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T17:53:33.539Z",
-      "file": "api/src/routes/db-status.ts",
-      "change": "modifyd api/src/routes/db-status.ts",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T17:53:21.664Z",
-      "file": "api/.env",
-      "change": "modifyd api/.env",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T17:53:17.350Z",
+      "timestamp": "2026-07-21T16:52:08.877Z",
       "file": "api/src/entities/Task.ts",
       "change": "modifyd api/src/entities/Task.ts",
       "type": "modify"
     },
     {
-      "timestamp": "2026-07-20T17:53:11.869Z",
-      "file": "api/src/data-source.ts",
-      "change": "modifyd api/src/data-source.ts",
+      "timestamp": "2026-07-21T16:52:08.267Z",
+      "file": "api/src/entities/User.ts",
+      "change": "modifyd api/src/entities/User.ts",
       "type": "modify"
     },
     {
-      "timestamp": "2026-07-20T17:16:31.926Z",
-      "file": "api/src/routes/db-status.ts",
-      "change": "modifyd api/src/routes/db-status.ts",
+      "timestamp": "2026-07-21T16:39:10.297Z",
+      "file": "apps/todo-app/.env",
+      "change": "modifyd apps/todo-app/.env",
       "type": "modify"
     },
     {
-      "timestamp": "2026-07-20T17:15:54.812Z",
-      "file": "api/src/routes/db-status.ts",
-      "change": "modifyd api/src/routes/db-status.ts",
+      "timestamp": "2026-07-21T16:39:07.347Z",
+      "file": "api/.env",
+      "change": "modifyd api/.env",
       "type": "modify"
     },
     {
-      "timestamp": "2026-07-20T17:15:00.177Z",
-      "file": "api/src/routes/db-status.ts",
-      "change": "modifyd api/src/routes/db-status.ts",
-      "type": "modify"
-    },
-    {
-      "timestamp": "2026-07-20T17:14:48.065Z",
-      "file": "apps/todo-app/src/api.ts",
-      "change": "modifyd apps/todo-app/src/api.ts",
+      "timestamp": "2026-07-21T16:37:26.639Z",
+      "file": "api/.env",
+      "change": "modifyd api/.env",
       "type": "modify"
     }
   ]
